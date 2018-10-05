@@ -28,7 +28,7 @@
     <platform name="android">
         <config-file target="config.xml" parent="/*">
             <feature name="Agora" >
-                <param name="android-package" value="com.chuwa.cordova.agora"/>
+                <param name="android-package" value="com.chuwa.cordova.agora.Agora"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -36,6 +36,9 @@
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
+
+        <source-file src="src/android/Agora.java" target-dir="src/com/chuwa/cordova/agora" />
+        <framework src="com.android.support:appcompat-v7:27.0.1" />
 
     </platform>
 
