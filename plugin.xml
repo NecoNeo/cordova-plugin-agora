@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-agora"
+        version="1.0.0">
+    <name>Agora</name>
+    <description>Agora Voice Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,agora</keywords>
+
+    <engines>
+        <engine name="cordova-android" version=">=4.0.0" />
+    </engines>
+
+    <js-module src="www/agora.js" name="agora">
+        <clobbers target="Agora" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Agora" >
+                <param name="ios-package" value="Agora" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+    </platform>
+
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Agora" >
+                <param name="android-package" value="com.chuwa.cordova.agora"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+
+    </platform>
+
+</plugin>
