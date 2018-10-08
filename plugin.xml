@@ -18,17 +18,23 @@
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="Agora" >
-                <param name="ios-package" value="Agora" />
+            <feature name="Agora">
+                <param name="ios-package" value="AgoraPlugin" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
+
+        <header-file src="src/ios/AgoraPlugin.h"/>
+        <source-file src="src/ios/AgoraPlugin.m"/>
+        <header-file src="src/ios/ChatRoomViewController.h"/>
+        <source-file src="src/ios/ChatRoomViewController.m"/>
+        <resource-file src="src/ios/PluginView.storyboard" target-dir=""/>
     </platform>
 
     <platform name="android">
         <config-file target="config.xml" parent="/*">
-            <feature name="Agora" >
-                <param name="android-package" value="com.chuwa.cordova.agora.Agora"/>
+            <feature name="Agora">
+                <param name="android-package" value="com.chuwa.cordova.agora.Agora" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
