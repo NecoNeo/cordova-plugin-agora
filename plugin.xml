@@ -5,8 +5,10 @@
         version="1.0.0">
     <name>Agora</name>
     <description>Agora Voice Plugin</description>
-    <license>Apache 2.0</license>
     <keywords>cordova,agora</keywords>
+    <license>MIT License</license>
+
+    <preference name="APP_ID"/>
 
     <engines>
         <engine name="cordova-android" version=">=4.0.0" />
@@ -24,11 +26,16 @@
             </feature>
         </config-file>
 
-        <header-file src="src/ios/AgoraPlugin.h"/>
-        <source-file src="src/ios/AgoraPlugin.m"/>
-        <header-file src="src/ios/ChatRoomViewController.h"/>
-        <source-file src="src/ios/ChatRoomViewController.m"/>
-        <resource-file src="src/ios/PluginView.storyboard" target-dir=""/>
+        <header-file src="src/ios/AgoraPlugin.h" />
+        <source-file src="src/ios/AgoraPlugin.m" />
+        <header-file src="src/ios/ChatRoomViewController.h" />
+        <source-file src="src/ios/ChatRoomViewController.m" />
+        <resource-file src="src/ios/PluginView.storyboard" target-dir="" />
+        <resource-file src="src/ios/AgoraConfig.plist" />
+
+        <config-file target="*AgoraConfig.plist" parent="AppId">
+            <string>$APP_ID</string>
+        </config-file>
     </platform>
 
     <platform name="android">

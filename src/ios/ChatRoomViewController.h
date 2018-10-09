@@ -1,6 +1,5 @@
 //
 //  ChatRoomViewController.h
-//  HelloCordova
 //
 //  Created by 布丁丸子酱 on 2018/10/8.
 //
