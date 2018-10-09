@@ -22,7 +22,7 @@
         <config-file target="config.xml" parent="/*">
             <feature name="Agora">
                 <param name="ios-package" value="AgoraPlugin" />
-                <param name="onload" value="true" />
+                <!-- <param name="onload" value="true" /> -->
             </feature>
         </config-file>
 
@@ -32,6 +32,7 @@
         <source-file src="src/ios/ChatRoomViewController.m" />
         <resource-file src="src/ios/PluginView.storyboard" target-dir="" />
         <resource-file src="src/ios/AgoraConfig.plist" />
+        <resource-file src="src/ios/Assets.xcassets" />
 
         <!-- libs -->
         <framework src="src/ios/lib/AgoraRtcEngineKit.framework" custom="true" />
@@ -54,7 +55,7 @@
         <config-file target="config.xml" parent="/*">
             <feature name="Agora">
                 <param name="android-package" value="com.chuwa.cordova.agora.Agora" />
-                <param name="onload" value="true" />
+                <!-- <param name="onload" value="true" /> -->
             </feature>
         </config-file>
 

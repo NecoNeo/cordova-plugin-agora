@@ -6,6 +6,6 @@
 // @property (nonatomic, retain) AGDChatViewController* chat_instance;
 // @property (nonatomic, retain) void (^_completionHandler)(NSString* someParameter);
 
-- (void) presentChatRoom:(CDVInvokedUrlCommand*)command;
+- (void) joinChannel:(CDVInvokedUrlCommand*)command;
 
 @end

@@ -1,27 +1,28 @@
 #import "AgoraPlugin.h"
+#import "AgoraRtcEngineKit.framework/Headers/AgoraRtcEngineKit.h"
+
+@interface AgoraPlugin()
+{}
+
+@end
 
 @implementation AgoraPlugin
 
 -(void)pluginInitialize
 {
-    [self initWithAppId];
+    // do nothing
 }
 
--(void)presentChatRoom:(CDVInvokedUrlCommand*)command
+-(void)joinChannel:(CDVInvokedUrlCommand*)command
 {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"PluginView" bundle:nil];
     ChatRoomViewController* chatRoomVC = (ChatRoomViewController*)[sb instantiateViewControllerWithIdentifier:@"ChatRoomViewController"];
+    NSString *channelId = [[command arguments] objectAtIndex:0];
+    [chatRoomVC setChannelId:channelId];
     [self.viewController presentViewController:chatRoomVC animated:YES completion:nil];
 }
 
-#pragma mark - privates
+#pragma mark - private methods
 
--(void)initWithAppId
-{
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"AgoraConfig" ofType:@"plist"];
-    NSMutableDictionary *config = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-    NSString *appId = [config valueForKey:@"AppId"];
-    NSLog(@"AppId: %@\n", appId);
-}
 
 @end
