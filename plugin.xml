@@ -33,6 +33,18 @@
         <resource-file src="src/ios/PluginView.storyboard" target-dir="" />
         <resource-file src="src/ios/AgoraConfig.plist" />
 
+        <!-- libs -->
+        <framework src="src/ios/lib/AgoraRtcEngineKit.framework" custom="true" />
+        <framework src="Accelerate.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="libc++.tbd" />
+        <framework src="libresolv.tbd" />
+        <framework src="CoreMedia.framework" />
+        <framework src="VideoToolbox.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="AVFoundation.framework" />
+
         <config-file target="*AgoraConfig.plist" parent="AppId">
             <string>$APP_ID</string>
         </config-file>

@@ -1,1 +1,3 @@
 .DS_Store
+src/ios/lib/*.framework
+src/ios/lib/*.a
