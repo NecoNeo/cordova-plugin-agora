@@ -30,6 +30,7 @@
     [self setChannelProfile];
     [self setupVideo];
     [self setupLocalVideo];
+    [self joinChannel];
 }
 
 #pragma mark - main steps
@@ -70,7 +71,8 @@
 
 // step 4 - join channel
 - (void)joinChannel {
-    [self.agoraKit joinChannelByToken:nil channelId:self.channelId info:nil uid:0 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
+    NSLog(@"before join channel\n");
+    [self.agoraKit joinChannelByToken:nil channelId:self.channelId info:nil uid:666 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
         NSLog(@"JOIN CHANNEL SUCCESS");
     }];
 }

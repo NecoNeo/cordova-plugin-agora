@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSString *channelId;
 
-- (void)setChannelId:(NSString*)channelId;
-
 @end
 
 NS_ASSUME_NONNULL_END

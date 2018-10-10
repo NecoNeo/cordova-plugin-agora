@@ -9,6 +9,8 @@
     <license>MIT License</license>
 
     <preference name="APP_ID"/>
+    <preference name="PERMISSION_MIC_DESC" default="应用需要访问您的麦克风" />
+    <preference name="PERMISSION_CAMERA_DESC" default="应用需要访问您的摄像头" />
 
     <engines>
         <engine name="cordova-android" version=">=4.0.0" />
@@ -24,6 +26,13 @@
                 <param name="ios-package" value="AgoraPlugin" />
                 <!-- <param name="onload" value="true" /> -->
             </feature>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+            <string>$PERMISSION_MIC_DESC</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>$PERMISSION_CAMERA_DESC</string>
         </config-file>
 
         <header-file src="src/ios/AgoraPlugin.h" />
