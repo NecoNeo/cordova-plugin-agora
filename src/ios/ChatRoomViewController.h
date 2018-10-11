@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ChatRoomViewController : UIViewController
 
 @property (nonatomic) NSString *channelId;
+@property (nonatomic) NSUInteger selfUid;
 
 @end
 

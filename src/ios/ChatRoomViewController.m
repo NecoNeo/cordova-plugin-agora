@@ -72,9 +72,18 @@
 // step 4 - join channel
 - (void)joinChannel {
     NSLog(@"before join channel\n");
-    [self.agoraKit joinChannelByToken:nil channelId:self.channelId info:nil uid:666 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
+    [self.agoraKit joinChannelByToken:nil channelId:self.channelId info:nil uid:self.selfUid joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
         NSLog(@"JOIN CHANNEL SUCCESS");
     }];
+}
+
+// step 5
+- (void)rtcEngine:(AgoraRtcEngineKit *)engine didJoinedOfUid:(NSUInteger)uid elapsed:(NSInteger)elapsed {
+    AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
+    videoCanvas.uid = uid;
+//    videoCanvas.view = self.remoteVideo;
+    videoCanvas.renderMode = AgoraVideoRenderModeFit;
+    [self.agoraKit setupRemoteVideo:videoCanvas];
 }
 
 #pragma mark - Navigation

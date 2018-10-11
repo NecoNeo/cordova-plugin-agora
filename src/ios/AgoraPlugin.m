@@ -19,6 +19,8 @@
     ChatRoomViewController* chatRoomVC = (ChatRoomViewController*)[sb instantiateViewControllerWithIdentifier:@"ChatRoomViewController"];
     NSString *channelId = [[command arguments] objectAtIndex:0];
     [chatRoomVC setChannelId:channelId];
+    NSUInteger uid = [[[command arguments] objectAtIndex:1] intValue];
+    [chatRoomVC setSelfUid:uid];
     [self.viewController presentViewController:chatRoomVC animated:YES completion:nil];
 }
 
