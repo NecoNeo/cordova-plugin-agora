@@ -26,14 +26,38 @@
                                     <action selector="dismissView:" destination="pF4-uy-c3K" eventType="touchUpInside" id="L7j-Ci-iSM"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="but-iJ-vpk" userLabel="LocalVideo">
-                                <rect key="frame" x="220" y="380" width="139" height="153"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="but-iJ-vpk" userLabel="LocalVideo">
+                                <rect key="frame" x="209" y="333" width="150" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="KYu-4x-0E7"/>
+                                    <constraint firstAttribute="height" constant="200" id="qKR-rU-PVd"/>
+                                </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="localVideoMutedBg" translatesAutoresizingMaskIntoConstraints="NO" id="as0-jR-nfR" userLabel="LocalVideoBg">
+                                <rect key="frame" x="209" y="333" width="150" height="200"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVD-wr-Aqf" userLabel="HangUpBtn">
+                                <rect key="frame" x="286" y="563" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="hangUpButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szs-vb-8zk">
+                                <rect key="frame" x="188" y="563" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="switchCameraButton"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ddn-Yt-aCH"/>
+                        <constraints>
+                            <constraint firstItem="as0-jR-nfR" firstAttribute="width" secondItem="but-iJ-vpk" secondAttribute="width" id="5w1-Dd-f8w"/>
+                            <constraint firstItem="as0-jR-nfR" firstAttribute="centerX" secondItem="but-iJ-vpk" secondAttribute="centerX" id="BF7-zH-a4V"/>
+                            <constraint firstItem="as0-jR-nfR" firstAttribute="centerY" secondItem="but-iJ-vpk" secondAttribute="centerY" id="KNw-cR-Oim"/>
+                            <constraint firstItem="as0-jR-nfR" firstAttribute="height" secondItem="but-iJ-vpk" secondAttribute="height" id="R3M-BB-vrM"/>
+                            <constraint firstItem="cYC-0N-Ivu" firstAttribute="trailing" secondItem="but-iJ-vpk" secondAttribute="trailing" constant="16" id="RRH-Qi-2Zp"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="but-iJ-vpk" secondAttribute="bottom" constant="90" id="SRq-h8-IC4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cYC-0N-Ivu"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -46,4 +70,9 @@
             <point key="canvasLocation" x="-60" y="136.28185907046478"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hangUpButton" width="744" height="744"/>
+        <image name="localVideoMutedBg" width="180" height="240"/>
+        <image name="switchCameraButton" width="744" height="744"/>
+    </resources>
 </document>
