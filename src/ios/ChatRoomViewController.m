@@ -12,6 +12,7 @@
 @property (nonatomic) AgoraRtcEngineKit *agoraKit;
 // views
 @property (weak, nonatomic) IBOutlet UIView *localVideo;
+@property (weak, nonatomic) IBOutlet UIView *remoteVideo0;
 
 @end
 
@@ -81,10 +82,23 @@
 - (void)rtcEngine:(AgoraRtcEngineKit *)engine didJoinedOfUid:(NSUInteger)uid elapsed:(NSInteger)elapsed {
     AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
     videoCanvas.uid = uid;
-//    videoCanvas.view = self.remoteVideo;
+    videoCanvas.view = self.remoteVideo0;
     videoCanvas.renderMode = AgoraVideoRenderModeFit;
     [self.agoraKit setupRemoteVideo:videoCanvas];
 }
+
+
+// step 6
+- (void) leaveChannel {
+    [self.agoraKit leaveChannel:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// step 11
+- (IBAction)switchCameraBtn:(id)sender {
+    [self.agoraKit switchCamera];
+}
+
 
 #pragma mark - Navigation
 
@@ -97,10 +111,12 @@
 }
 */
 
-
 - (IBAction)dismissView:(id)sender {
-    [self.agoraKit leaveChannel:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self leaveChannel];
+}
+
+- (IBAction)hangUpBtnClick:(id)sender {
+    [self leaveChannel];
 }
 
 @end
