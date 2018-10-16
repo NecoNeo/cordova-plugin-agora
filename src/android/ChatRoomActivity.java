@@ -14,4 +14,8 @@ public class ChatRoomActivity extends Activity {
         // setContentView(R.layout.activity_chat_room);
         setContentView(fakeR.getId("layout", "activity_chat_room"));
     }
+
+    public void dummy() {
+        // do nothing
+    }
 }
