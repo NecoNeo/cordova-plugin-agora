@@ -70,9 +70,29 @@
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:label="@string/app_name" android:name="com.chuwa.cordova.agora.ChatRoomActivity" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+            </activity>
         </config-file>
 
         <source-file src="src/android/Agora.java" target-dir="src/com/chuwa/cordova/agora" />
+        <source-file src="src/android/ChatRoomActivity.java" target-dir="src/com/chuwa/cordova/agora" />
+        <source-file src="src/android/FakeR.java" target-dir="src/com/chuwa/cordova/agora" />
+
+        <resource-file src="src/android/res/layout/activity_chat_room.xml" target="res/layout/activity_chat_room.xml" />
+
+        <resource-file src="src/android/res/drawable-hdpi/btn_end_call.png" target="res/drawable-hdpi/btn_end_call.png" />
+        <resource-file src="src/android/res/drawable-hdpi/btn_mute.png" target="res/drawable-hdpi/btn_mute.png" />
+        <resource-file src="src/android/res/drawable-hdpi/btn_switch_camera.png" target="res/drawable-hdpi/btn_switch_camera.png" />
+        <resource-file src="src/android/res/drawable-hdpi/btn_video.png" target="res/drawable-hdpi/btn_video.png" />
+        <resource-file src="src/android/res/drawable-hdpi/btn_voice.png" target="res/drawable-hdpi/btn_voice.png" />
+
         <framework src="com.android.support:appcompat-v7:27.0.1" />
 
     </platform>
