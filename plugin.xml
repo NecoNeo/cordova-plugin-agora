@@ -76,6 +76,10 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
 
+        <config-file target="res/values/strings.xml" parent="/resources">
+            <string name="agora_app_id">$APP_ID</string>
+        </config-file>
+
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity android:label="@string/app_name" android:name="com.chuwa.cordova.agora.ChatRoomActivity" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
             </activity>
@@ -92,6 +96,23 @@
         <resource-file src="src/android/res/drawable-hdpi/btn_switch_camera.png" target="res/drawable-hdpi/btn_switch_camera.png" />
         <resource-file src="src/android/res/drawable-hdpi/btn_video.png" target="res/drawable-hdpi/btn_video.png" />
         <resource-file src="src/android/res/drawable-hdpi/btn_voice.png" target="res/drawable-hdpi/btn_voice.png" />
+
+        <lib-file src="src/android/libs/agora-rtc-sdk.jar" />
+        <resource-file src="src/android/libs/x86/libagora-rtc-sdk-jni.so" target="jniLibs/x86/libagora-rtc-sdk-jni.so"/>
+        <resource-file src="src/android/libs/x86/libagora-crypto.so" target="jniLibs/x86/libagora-crypto.so"/>
+
+        <!-- <header-file src="src/android/libs/AgoraBase.h" target-dir="libs" />
+        <header-file src="src/android/libs/IAgoraMediaEngine.h" target-dir="libs" />
+        <header-file src="src/android/libs/IAgoraRtcEngine.h" target-dir="libs" />
+        <header-file src="src/android/libs/IAgoraService.h" target-dir="libs" /> -->
+        <!-- <source-file src="src/android/libs/armeabi-v7a/libagora-rtc-sdk-jni.so" target-dir="libs/armeabi-v7a" framework="true" />
+        <source-file src="src/android/libs/armeabi-v7a/libagora-crypto.so" target-dir="libs/armeabi-v7a" framework="true" /> -->
+        <!-- <source-file src="src/android/libs/arm64-v8a/libagora-rtc-sdk-jni.so" target-dir="libs/armeabi" framework="true" />
+        <source-file src="src/android/libs/arm64-v8a/libagora-crypto.so" target-dir="libs/armeabi" framework="true" />
+        <source-file src="src/android/libs/x86/libagora-rtc-sdk-jni.so" target-dir="libs/x86" framework="true" />
+        <source-file src="src/android/libs/x86/libagora-crypto.so" target-dir="libs/x86" framework="true" /> -->
+
+        <framework src="src/android/libs/agora.gradle" custom="true" type="gradleReference" />
 
         <framework src="com.android.support:appcompat-v7:27.0.1" />
 

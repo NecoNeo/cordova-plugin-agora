@@ -1,0 +1,11 @@
+android {
+    sourceSets{
+        main {
+            jniLibs.srcDirs = ['../src/main/libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'src/main/libs', include: ['*.jar'])
+}

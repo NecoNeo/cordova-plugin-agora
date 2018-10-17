@@ -1,8 +1,8 @@
 .DS_Store
 src/ios/lib/*.framework
 src/ios/lib/*.a
-src/android/lib/*.jar
-src/android/lib/arm64-v8a
-src/android/lib/armeabi-v7a
-src/android/lib/include
-src/android/lib/x86
+src/android/libs/*.jar
+src/android/libs/arm64-v8a
+src/android/libs/armeabi-v7a
+src/android/libs/include
+src/android/libs/x86
