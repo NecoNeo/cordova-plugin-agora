@@ -1,2 +1,3 @@
 ## UNDER CONSTRUCTION
-for test
+ios demo finished
+android deploy failed, project canceled
